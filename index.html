@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Designer MVP</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">Agent Designer MVP</p>
+        <h1>Design an AI assistant in minutes.</h1>
+        <p class="lede">
+          Walk through behavior, task focus, required context, and evaluation prompts. Generate a shareable
+          <code>SKILLS.md</code> that captures the agent you want.
+        </p>
+      </header>
+
+      <form id="designer-form">
+        <section class="card" id="persona">
+          <h2>1. Agent persona</h2>
+          <p>Summarize the assistant in plain language.</p>
+          <div class="grid two">
+            <label>
+              Persona name
+              <input type="text" name="personaName" placeholder="" required />
+            </label>
+            <label>
+              One-line summary
+              <input type="text" name="personaSummary" placeholder="" required />
+            </label>
+          </div>
+          <label>
+            Core traits (comma-separated)
+            <input type="text" name="personaTraits" placeholder="e.g., thoughtful, pragmatic, structured" />
+          </label>
+          <div class="grid two">
+            <label>
+              Voice / tonality
+              <input type="text" name="personaVoice" placeholder="e.g., concise and professional" />
+            </label>
+            <label>
+              Primary objectives (comma-separated)
+              <input type="text" name="personaObjectives" placeholder="e.g., summarize, plan, clarify" />
+            </label>
+          </div>
+        </section>
+
+        <section class="card" id="behavior">
+          <h2>2. Behavior controls</h2>
+          <p>Set the stable sliders that map to the behavior schema.</p>
+          <div class="slider-group" id="slider-group"></div>
+        </section>
+
+        <section class="card" id="task-focus">
+          <h2>3. Task focus & scope</h2>
+          <p>Pick the primary task focus and define boundaries.</p>
+          <label>
+            Task focus
+            <select name="taskFocus" id="task-focus-select"></select>
+          </label>
+          <div class="grid three">
+            <label>
+              In-scope
+              <textarea name="scopeIn" placeholder="What the agent should handle." rows="3"></textarea>
+            </label>
+            <label>
+              Out-of-scope
+              <textarea name="scopeOut" placeholder="What the agent should decline or escalate." rows="3"></textarea>
+            </label>
+            <label>
+              Success criteria
+              <textarea name="scopeSuccess" placeholder="How success is measured." rows="3"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="card" id="context">
+          <h2>4. Context & constraints</h2>
+          <p>Select context blocks and add notes or source material.</p>
+          <div class="context-grid" id="context-grid"></div>
+          <div class="grid two">
+            <label>
+              Structured context (YAML)
+              <textarea name="contextYaml" rows="10" placeholder="Paste or draft structured YAML."></textarea>
+            </label>
+            <label>
+              Structured context (JSON)
+              <textarea name="contextJson" rows="10" placeholder="Paste or draft structured JSON."></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="card" id="evals">
+          <h2>5. Evaluation prompt</h2>
+          <p>Define a single eval in the MVP format.</p>
+          <label>
+            Prompt
+            <textarea name="evalPrompt" rows="2" placeholder="" ></textarea>
+          </label>
+          <div class="grid two">
+            <label>
+              Constraints (comma-separated)
+              <input type="text" name="evalConstraints" placeholder="e.g., one sentence, neutral tone" />
+            </label>
+            <label>
+              Task focus
+              <input type="text" name="evalTaskFocus" placeholder="e.g., summarization" />
+            </label>
+          </div>
+          <div class="grid two">
+            <label>
+              Input artifact
+              <textarea name="evalInput" rows="4" placeholder="Content to evaluate." ></textarea>
+            </label>
+            <label>
+              Reference artifact
+              <textarea name="evalReference" rows="4" placeholder="Optional reference content." ></textarea>
+            </label>
+          </div>
+          <label>
+            Expected response
+            <textarea name="evalExpected" rows="3" placeholder="" ></textarea>
+          </label>
+        </section>
+
+        <section class="card" id="output">
+          <div class="output-header">
+            <div>
+              <h2>Generated SKILLS.md</h2>
+              <p>Copy or download your draft skills file.</p>
+            </div>
+            <div class="button-group">
+              <button type="button" id="copy-button">Copy</button>
+              <button type="button" id="download-button">Download</button>
+            </div>
+          </div>
+          <textarea id="skills-output" rows="20" readonly></textarea>
+        </section>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
