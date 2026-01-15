@@ -164,6 +164,19 @@ function getCommaList(value) {
     .filter(Boolean);
 }
 
+function getCheckedValues(name) {
+  const fields = form.elements[name];
+  if (!fields) {
+    return [];
+  }
+  if (!fields.length) {
+    return fields.checked ? [fields.value] : [];
+  }
+  return Array.from(fields)
+    .filter((field) => field.checked)
+    .map((field) => field.value);
+}
+
 function getInputValue(name) {
   const field = form.elements[name];
   if (!field) {
@@ -246,8 +259,9 @@ function buildEvalSection() {
 }
 
 function updateOutput() {
-  const traits = getCommaList(getInputValue("personaTraits"));
-  const objectives = getCommaList(getInputValue("personaObjectives"));
+  const traits = getCheckedValues("personaTraits");
+  const voice = getCheckedValues("personaVoice");
+  const objectives = getCheckedValues("personaObjectives");
   const contextSelections = getContextDetails();
   const yamlBlock = getInputValue("contextYaml");
   const jsonBlock = getInputValue("contextJson");
@@ -262,7 +276,7 @@ function updateOutput() {
     `**Persona name:** ${getInputValue("personaName") || "<NAME>"}\n\n` +
     `**One-line summary:** ${getInputValue("personaSummary") || "<ONE_LINE_SUMMARY>"}\n\n` +
     `**Core traits:**\n${traits.length ? traits.map((trait) => `- ${trait}`).join("\n") : "- <TRAIT_1>\n- <TRAIT_2>\n- <TRAIT_3>"}\n\n` +
-    `**Voice/tonality:** ${getInputValue("personaVoice") || "<VOICE_TONE>"}\n\n` +
+    `**Voice/tonality:**\n${voice.length ? voice.map((tone) => `- ${tone}`).join("\n") : "- <VOICE_TONE_1>\n- <VOICE_TONE_2>"}\n\n` +
     `**Primary objectives:**\n${objectives.length ? objectives.map((obj) => `- ${obj}`).join("\n") : "- <OBJECTIVE_1>\n- <OBJECTIVE_2>"}\n\n` +
     `---\n\n` +
     `## Behavior Settings (Sliders)\n\n` +

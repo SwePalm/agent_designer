@@ -94,6 +94,37 @@ label {
   color: var(--text);
 }
 
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox-group p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin: 0;
+}
+
 input,
 textarea,
 select,
