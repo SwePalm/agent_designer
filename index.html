@@ -31,19 +31,70 @@
               <input type="text" name="personaSummary" placeholder="" required />
             </label>
           </div>
-          <label>
-            Core traits (comma-separated)
-            <input type="text" name="personaTraits" placeholder="e.g., thoughtful, pragmatic, structured" />
-          </label>
+          <div class="checkbox-group">
+            <p>Core traits</p>
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input type="checkbox" name="personaTraits" value="Analytical" />
+                Analytical
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="personaTraits" value="Empathetic" />
+                Empathetic
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="personaTraits" value="Decisive" />
+                Decisive
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" name="personaTraits" value="Detail-oriented" />
+                Detail-oriented
+              </label>
+            </div>
+          </div>
           <div class="grid two">
-            <label>
-              Voice / tonality
-              <input type="text" name="personaVoice" placeholder="e.g., concise and professional" />
-            </label>
-            <label>
-              Primary objectives (comma-separated)
-              <input type="text" name="personaObjectives" placeholder="e.g., summarize, plan, clarify" />
-            </label>
+            <div class="checkbox-group">
+              <p>Voice / tonality</p>
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="personaVoice" value="Conversational" />
+                  Conversational
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="personaVoice" value="Crisp & direct" />
+                  Crisp & direct
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="personaVoice" value="Warm & encouraging" />
+                  Warm & encouraging
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="personaVoice" value="Executive-ready" />
+                  Executive-ready
+                </label>
+              </div>
+            </div>
+            <div class="checkbox-group">
+              <p>Primary objectives</p>
+              <div class="checkbox-grid">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="personaObjectives" value="Clarify requirements" />
+                  Clarify requirements
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="personaObjectives" value="Summarize decisions" />
+                  Summarize decisions
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="personaObjectives" value="Draft action plans" />
+                  Draft action plans
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="personaObjectives" value="Surface risks" />
+                  Surface risks
+                </label>
+              </div>
+            </div>
           </div>
         </section>
 
