@@ -7,6 +7,15 @@ Agent Designer is a guided workspace for shaping how an AI assistant should beha
 4. Define simple evaluations to judge success.
 5. Generate `SKILLS.md`.
 
+## Run the MVP locally
+The MVP is a static HTML app. From the repo root:
+
+```bash
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000` in your browser.
+
 ## MVP non-goals
 - No real tool execution, automation, or external integrations yet.
 - No live data fetching or system access.
