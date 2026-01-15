@@ -1,8 +1,3 @@
-# agent_designer
-
-- [Task & Context Catalog](docs/task_context_catalog.md)
-## Documentation
-- [Behavior controls schema](docs/behavior_schema.md)
 Agent Designer is a guided workspace for shaping how an AI assistant should behave, written for people who want clear outcomes rather than technical setup. It helps you describe the kind of help you want, gather the right details, and then turns that into a plain-language SKILLS.md file you can share or iterate on.
 
 ## MVP flow
@@ -17,8 +12,10 @@ Agent Designer is a guided workspace for shaping how an AI assistant should beha
 - No live data fetching or system access.
 - No multi-agent orchestration or long-running workflows.
 
-## Docs
+## Documentation
 - [MVP details](docs/mvp.md)
+- [Task & Context Catalog](docs/task_context_catalog.md)
+- [Behavior controls schema](docs/behavior_schema.md)
 
 ## Evaluation Format
 See [docs/evals_format.md](docs/evals_format.md) for the eval input structure, scoring criteria, and example evals.
